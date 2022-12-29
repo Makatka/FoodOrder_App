@@ -1,0 +1,35 @@
+.mealItem {
+  background-color: #60ba63;
+  color: #fff;
+  width: 70%;
+  margin: 20px auto;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  animation: meals-appear 1s ease-out forwards;
+
+
+  &:hover {
+    background-color: #73c975;
+  }
+
+  .mealImage {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-right: 20px;
+  }
+
+  .mealDescription {
+    flex-grow: 1;
+
+    h3, p {
+      margin: 5px 0;
+    }
+  }
+
+
+}
