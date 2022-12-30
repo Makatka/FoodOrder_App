@@ -1,0 +1,20 @@
+import styles from './CartItem.module.scss'
+const CartItem = props => {
+  return (
+    <li className={styles.cartItem}>
+      <div>
+        <h2>{props.name}</h2>
+        <div className={styles.summary}>
+          <span className={styles.price}>{props.price} zł</span>
+          <span className={styles.amount}>x{props.amount}</span>
+        </div>
+      </div>
+        <div className={styles.action}>
+          <button onClick={props.onRemove}>-</button>
+          <button onClick={props.onAdd}>+</button>
+        </div>
+    </li>
+  )
+}
+
+export default CartItem

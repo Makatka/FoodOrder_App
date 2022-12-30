@@ -8,7 +8,7 @@ const MealItemForm = props => {
   const submitHandler = e => {
     e.preventDefault();
     const enteredAmount = amountInputRef.current.value;
-    const enteredAmountNumber = parseInt(enteredAmount);
+    const enteredAmountNumber = + enteredAmount ;
 
     if(enteredAmount.trim().length === 0 ||
       enteredAmountNumber < 1 ||
