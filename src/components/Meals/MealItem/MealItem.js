@@ -1,20 +1,18 @@
-
-import {useContext} from "react";
 import mealImage from '../../../assets/meal_1.jpeg';
 import styles from './MealItem.module.scss'
 import MealItemForm from "./MealItemForm";
-import CartContext from "../../../store/cart-context";
+import {useDispatch} from 'react-redux';
+import { addToCart } from  '../../../redux/cartRedux';
 
-const Mealitem = props => {
-  const cartContext = useContext(CartContext);
-  const addToCartHandler = amount => {
-  cartContext.addItem({
-    id: props.id,
-    name: props.name,
-    amount: amount,
-    price: props.price
-  })
-  };
+
+const MealItem = props => {
+  const dispatch = useDispatch();
+
+  const addToCartHandler = () => {
+    dispatch(addToCart(props))
+  }
+
+
   return (
     <li className={styles.mealItem}>
 
@@ -31,4 +29,4 @@ const Mealitem = props => {
   )
 }
 
-export default Mealitem
+export default MealItem

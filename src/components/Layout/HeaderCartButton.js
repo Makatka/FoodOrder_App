@@ -1,20 +1,18 @@
-import {useContext, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import CartIcon from "../Cart/CartIcon";
-import CartContext from "../../store/cart-context";
 import styles from  './HeaderCartButton.module.scss';
+import { useSelector } from 'react-redux';
+
 
 const HeaderCartButton = props => {
-  const cartContext = useContext(CartContext);
-  const {items} = cartContext;
   const [btnIsHighLited, setBtnIsHighLited] = useState(false);
-  const numberOfCartItems = items.reduce((currentNumber, item) => {
-    return currentNumber + item.amount;
-  }, 0);
 
+  const items = useSelector(state => state.cart.items);
   const btnClasses = `${styles.button} ${btnIsHighLited ? styles.bump : ''}`;
+  const numberOfCartItems = items.length;
 
   useEffect(() => {
-    if(items.length === 0){
+    if(numberOfCartItems === 0){
       return;
     }
     setBtnIsHighLited(true)
