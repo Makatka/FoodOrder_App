@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 const AvailableMeals = () => {
   const meals = useSelector((state) => state.meals);
 
+
   const mealsList = meals.map(meal => <MealItem
     key={meal.id}
     id={meal.id}

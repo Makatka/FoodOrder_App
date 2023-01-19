@@ -1,16 +1,9 @@
 import mealImage from '../../../assets/meal_1.jpeg';
 import styles from './MealItem.module.scss'
 import MealItemForm from "./MealItemForm";
-import {useDispatch} from 'react-redux';
-import { addToCart } from  '../../../redux/cartRedux';
 
 
 const MealItem = props => {
-  const dispatch = useDispatch();
-
-  const addToCartHandler = () => {
-    dispatch(addToCart(props))
-  }
 
 
   return (
@@ -22,7 +15,7 @@ const MealItem = props => {
         <p>{props.description}</p>
         <span className={styles.price}>{props.price} zł</span>
       </div>
-      <MealItemForm id={props.id} onAddToCart={addToCartHandler}/>
+      <MealItemForm id={props.id} name={props.name} price={props.price} />
 
 
     </li>

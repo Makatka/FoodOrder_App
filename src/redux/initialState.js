@@ -1,6 +1,5 @@
 const initialState = {
   meals: [
-
     {
       id: 'm1',
       name: 'Sushi',
@@ -41,8 +40,10 @@ const initialState = {
 
   ],
   cart: {
-    items: [],
-    totalAmount: 0,
+    items: [
+
+    ],
+    totalAmount: 25,
   }
 
 

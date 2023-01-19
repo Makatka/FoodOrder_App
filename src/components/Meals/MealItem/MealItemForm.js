@@ -1,22 +1,34 @@
 import {useRef, useState} from "react";
 import styles from './MealItemForm.module.scss';
 import Input from "../../UI/Input";
+import {useDispatch} from 'react-redux'
+import {addToCart, updateTotalAmount} from "../../../redux/cartRedux";
 
 const MealItemForm = props => {
   const [amountIsValid, setAmountIsValid] = useState(true)
   const amountInputRef = useRef();
+  const dispatch = useDispatch();
+
   const submitHandler = e => {
     e.preventDefault();
     const enteredAmount = amountInputRef.current.value;
-    const enteredAmountNumber = +enteredAmount;
+    const enteredAmountNumber = + enteredAmount;
+
+    dispatch(addToCart({
+      id: props.id,
+      name: props.name,
+      price: props.price,
+      amount: enteredAmountNumber,
+    } ))
+
+
 
     if(enteredAmount.trim().length === 0 ||
       enteredAmountNumber < 1 ||
       enteredAmountNumber > 5){
       setAmountIsValid(false);
-      return;
     }
-    props.onAddToCart(enteredAmountNumber);
+
   };
   return (
     <form className={styles.form} onSubmit={submitHandler}>
