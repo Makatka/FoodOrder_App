@@ -16,8 +16,6 @@ const MealItem = props => {
         <span className={styles.price}>{props.price} zł</span>
       </div>
       <MealItemForm id={props.id} name={props.name} price={props.price} />
-
-
     </li>
   )
 }

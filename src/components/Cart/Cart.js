@@ -1,18 +1,15 @@
 import styles from './Cart.module.scss';
 import Modal from '../UI/Modal';
 import CartItem from "./CartItem";
-import {useDispatch, useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
 
 const Cart = props => {
   const cart = useSelector(state => state.cart);
-  const dispatch = useDispatch()
-
 
   const hasItems = cart.items.length > 0;
 
-
-
   const cartItems = (<ul className={styles.cartItems}>{cart.items.map((item) => <CartItem
+        itemId={item.id}
         key={item.id}
         name={item.name}
         amount={item.amount}
