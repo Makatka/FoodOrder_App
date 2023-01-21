@@ -25,27 +25,34 @@ const cartReducer = (statePart = initialState.cart, action) => {
         amount += item.amount * item.price;
       });
 
-      return  { items: items, totalAmount: amount.toFixed(2)}
+      return {items: items, totalAmount: amount.toFixed(2)}
     case ADD_CART_ITEM:
 
+      let amount2 = 0;
 
       const items2 = statePart.items.filter(() => true);
-      for (const item of items2){
-        if (item.id === action.payload.id) {
-          item.amount ++;
+      for (const item of items2) {
+        if (item.id === action.payload) {
+          item.amount++;
         }
+        amount2 += item.amount * item.price;
       }
-      return {items: items2, };
+
+      return {
+        items: items2,
+        totalAmount: amount2
+      };
+
     case REMOVE_CART_ITEM:
-      for (const item of statePart.items){
+      for (const item of statePart.items) {
         if (item.id === action.payload.id) {
-          item.amount --
+          item.amount--
         }
       }
       return [...statePart];
 
     case REMOVE_FROM_CART:
-   //   return [...statePart.items.filter(item => (item.id !== action.payload))];
+    //   return [...statePart.items.filter(item => (item.id !== action.payload))];
 
     default:
       return statePart;

@@ -6,14 +6,12 @@ const CartItem = props => {
   const dispatch = useDispatch()
   const items = useSelector((state) => state.items);
   const handlerAddItem = () => {
-    console.log('add' + props.itemId);
     dispatch(addCartItem(props.itemId));
   }
 
 
 
   const handlerRemoveItem = () => {
-    console.log('remove' + props.itemId)
     dispatch(removeCartItem(props.itemId))
   };
 
