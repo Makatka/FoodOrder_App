@@ -40,12 +40,10 @@ const initialState = {
 
   ],
   cart: {
-    items: [
-
-    ],
-    totalAmount: 25,
+    items: [],
+    totalAmount: 0,
+    orderSubmit: []
   }
-
 
 }
 

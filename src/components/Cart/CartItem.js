@@ -1,18 +1,18 @@
 import styles from './CartItem.module.scss'
-import {useDispatch, useSelector} from "react-redux";
-import {addCartItem, removeCartItem} from "../../redux/cartRedux";
+import {useDispatch} from "react-redux";
+import {increaseCartItem, decreaseCartItem } from "../../redux/cartRedux";
 
 const CartItem = props => {
   const dispatch = useDispatch()
-  const items = useSelector((state) => state.items);
-  const handlerAddItem = () => {
-    dispatch(addCartItem(props.itemId));
+
+
+  const increaseAmountHandler = () => {
+    dispatch(increaseCartItem(props.itemId))
   }
 
 
-
-  const handlerRemoveItem = () => {
-    dispatch(removeCartItem(props.itemId))
+  const decreaseAmountHandler = () => {
+    dispatch(decreaseCartItem(props.itemId))
   };
 
   return (
@@ -25,8 +25,8 @@ const CartItem = props => {
         </div>
       </div>
       <div className={styles.action}>
-        <button onClick={handlerRemoveItem}>-</button>
-        <button onClick={handlerAddItem}>+</button>
+        <button onClick={decreaseAmountHandler}>-</button>
+        <button onClick={increaseAmountHandler}>+</button>
       </div>
     </li>
   )

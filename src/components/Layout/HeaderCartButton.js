@@ -9,7 +9,11 @@ const HeaderCartButton = props => {
 
   const items = useSelector(state => state.cart.items);
   const btnClasses = `${styles.button} ${btnIsHighLited ? styles.bump : ''}`;
-  const numberOfCartItems = items.length;
+  let numberOfCartItems = 0;
+
+  for (const item of items){
+    numberOfCartItems += item.amount
+  }
 
   useEffect(() => {
     if(numberOfCartItems === 0){

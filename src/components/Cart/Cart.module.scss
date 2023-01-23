@@ -44,3 +44,20 @@
   background-color: #60ba63;
   color: white;
 }
+
+.orderInfo {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  p {
+    font-family: Roboto, sans-serif;
+    margin-top: 50px;
+    font-size: 26px;
+  }
+  .deliveryImage {
+    max-height: 400px;
+    width: auto;
+    margin: 20px auto;
+  }
+}
