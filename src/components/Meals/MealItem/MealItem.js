@@ -1,4 +1,3 @@
-import mealImage from '../../../assets/meal_1.jpeg';
 import styles from './MealItem.module.scss'
 import MealItemForm from "./MealItemForm";
 
@@ -9,7 +8,7 @@ const MealItem = props => {
   return (
     <li className={styles.mealItem}>
 
-      <img src={mealImage} alt={props.name} className={styles.mealImage}/>
+      <img src={props.image} alt={props.name} className={styles.mealImage}/>
       <div className={styles.mealDescription}>
         <h3>{props.name}</h3>
         <p>{props.description}</p>

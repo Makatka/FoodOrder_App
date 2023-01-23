@@ -13,6 +13,7 @@ const AvailableMeals = () => {
     name={meal.name}
     price={meal.price}
     description={meal.description}
+    image={meal.imageUrl}
 
   />);
   return (
