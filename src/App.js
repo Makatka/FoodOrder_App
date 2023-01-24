@@ -3,7 +3,9 @@ import {useState} from "react";
 import './index.css'
 import Meals from "./components/Meals/Meals";
 import Cart from "./components/Cart/Cart";
-
+import Container from "./components/Layout/Container";
+import MealsFilter from "./components/Meals/MealsFilter";
+import TagsList from "./components/Meals/TagsList";
 
 
 function App() {
@@ -19,11 +21,15 @@ function App() {
 
   return (
     <div>
-      {visibleCart && <Cart onClose={hideCartHandler} />}
-      <Header onShowCart={showCartHandler} />
-      <main>
-        <Meals />
-      </main>
+      {visibleCart && <Cart onClose={hideCartHandler}/>}
+      <Header onShowCart={showCartHandler}/>
+      <Container>
+        <aside>
+          <MealsFilter/>
+          <TagsList/>
+        </aside>
+        <Meals/>
+      </Container>
     </div>
   );
 }

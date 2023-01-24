@@ -2,4 +2,11 @@
   max-width: 1140px;
   margin: auto;
   padding: 50px 0;
+  display: flex;
+
+  aside {
+    width: 30%;
+    margin-left: 30px;
+  }
+
 }

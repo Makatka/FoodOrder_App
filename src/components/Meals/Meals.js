@@ -6,13 +6,7 @@ import Container from "../Layout/Container";
 
 const Meals = () => {
   return (
-    <Fragment>
-      <Container>
-        <MealsFilter />
-        <TagsList />
-        <AvailableMeals />
-      </Container>
-    </Fragment>
+       <AvailableMeals />
   )
 }
 

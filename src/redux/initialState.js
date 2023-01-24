@@ -5,7 +5,7 @@ const initialState = {
       name: 'Sushi',
       description: 'Finest fish and veggies',
       price: 22.99,
-      imageUrl: 'https://i.postimg.cc/CLCcwXYj/meal-1.jpg'
+      imageUrl: 'https://i.postimg.cc/CLCcwXYj/meal-1.jpg',
     },
     {
       id: 'm2',
@@ -13,7 +13,6 @@ const initialState = {
       description: 'A german specialty!',
       price: 16.5,
       imageUrl: 'https://i.postimg.cc/VvfdnJrs/meal-2.jpg'
-
     },
     {
       id: 'm3',
