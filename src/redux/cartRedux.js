@@ -36,13 +36,16 @@ const cartReducer = (statePart = initialState.cart, action) => {
       for (const item of statePart.items) {
         if (item.id === action.payload.id) {
           item.amount += action.payload.amount
-          return {...statePart};
+          return {...statePart,
+            totalAmount: recalculateTotalPrice(statePart.items)
+          };
         }
       }
+
       return {
         ...statePart,
         items: [...statePart.items, action.payload],
-        totalAmount: recalculateTotalPrice(statePart.items)
+        totalAmount: recalculateTotalPrice( [...statePart.items, action.payload])
       }
 
     case INCREASE_CART_ITEM:

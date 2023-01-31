@@ -12,7 +12,15 @@ const MealItemForm = props => {
   const submitHandler = e => {
     e.preventDefault();
     const enteredAmount = amountInputRef.current.value;
-    const enteredAmountNumber = + enteredAmount;
+    const enteredAmountNumber = +enteredAmount;
+
+
+    if(enteredAmount.trim().length === 0 ||
+      enteredAmountNumber < 1 ||
+      enteredAmountNumber > 5){
+      setAmountIsValid(false);
+      return;
+    }
 
     dispatch(addToCart({
       id: props.id,
@@ -20,15 +28,6 @@ const MealItemForm = props => {
       price: props.price,
       amount: enteredAmountNumber,
     } ))
-
-
-
-    if(enteredAmount.trim().length === 0 ||
-      enteredAmountNumber < 1 ||
-      enteredAmountNumber > 5){
-      setAmountIsValid(false);
-    }
-
   };
   return (
     <form className={styles.form} onSubmit={submitHandler}>
