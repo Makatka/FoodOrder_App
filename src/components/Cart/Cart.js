@@ -4,7 +4,7 @@ import CartItem from "./CartItem";
 import CartForm from "./CartForm";
 import deliveryImage from '../../assets/delivery.jpg'
 import {useSelector, useDispatch} from 'react-redux';
-import {submitOrder} from "../../redux/cartRedux";
+import {submitOrder, cancelOrder, sendOrder} from "../../redux/cartRedux";
 import {useState} from "react";
 
 const Cart = props => {
@@ -29,28 +29,39 @@ const Cart = props => {
 
   const submitOrderHandler = () => {
     setOrderSubmit(true)
+    dispatch(submitOrder(cart.items))
+    console.log(cart.items)
   }
 
 
-  const sendOrderHandler = () => {
-    dispatch(submitOrder(cart.items));
-
+  const sendOrderHandler = (orderDetails) => {
     setOrderSended(true);
+    console.log(cart)
 
     const timer = setTimeout(() => {
       setOrderSended(false);
+      setOrderSubmit(false);
       props.onClose();
     }, 5000);
 
     return () => {
       clearTimeout(timer)
     }
+
+  }
+
+  const orderCancelHandler = () => {
+    setOrderSubmit(false);
+    dispatch(cancelOrder);
+    console.log(cart.orderSubmit)
   }
 
   return (
     <Modal onClose={props.onClose}>
+
       {!orderSended && !orderSubmit && cartItems}
-      {orderSubmit &&
+
+      {orderSubmit && !orderSended &&
         <CartForm sendOrder={sendOrderHandler}/>
       }
       {orderSended &&
@@ -59,22 +70,21 @@ const Cart = props => {
         <img src={deliveryImage} alt="deliverySend" className={styles.deliveryImage}/>
       </div>
       }
-      {!orderSended && !orderSubmit && <div className={styles.total}>
-        <span>Koszt zamówienia</span>
+      {!orderSended && <div className={styles.total}>
+        <span>Razem</span>
         <span>{cart.totalAmount} zł</span>
-      </div>
-      }
-      <div className={styles.actions}>
+      </div>}
 
-        {!orderSubmit &&
-          <button className={styles['button--alt']} onClick={props.onClose}>Zamknij</button>
+      <div className={styles.actions}>
+        {hasItems && !orderSubmit &&
+          <button className={styles['button--alt']} onClick={submitOrderHandler}>Zamów</button>}
+
+        {orderSubmit && <button
+          className={styles['button--cancel']}
+          onClick={props.onClose}>Anuluj zamówienie</button>
         }
-        {orderSubmit &&
-          <button className={styles['button--cancel']} onClick={props.onClose}>Anuluj zamówienie</button>
-        }
-        {hasItems &&
-          <button className={styles['button--alt']} onClick={submitOrderHandler}>Zamów</button>
-        }
+
+        <button className={styles['button--alt']} onClick={orderCancelHandler}>Zamknij</button>
       </div>
 
     </Modal>

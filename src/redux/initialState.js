@@ -47,7 +47,11 @@ const initialState = {
   cart: {
     items: [],
     totalAmount: 0,
-    orderSubmit: []
+    order: {
+      orderItems: [],
+      orderDetails: {}
+    }
+
   }
 
 }
