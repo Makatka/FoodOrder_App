@@ -5,7 +5,6 @@ import {sendOrder} from "../../redux/cartRedux";
 
 const CartForm = (props) => {
 
-
   const dispatch = useDispatch();
   const nameInputRef = useRef();
   const detailsInputRef = useRef();
@@ -22,12 +21,11 @@ const CartForm = (props) => {
       details: detailsInputRef.current.value
     }
     dispatch(sendOrder(enteredFormDetails))
-    console.log('dziala')
   }
 
 
   return (
-      <form onSubmit={formSubmissionHandler}>
+      <form className={styles.detailsForm} onSubmit={formSubmissionHandler}>
         <h1>Jeszcze tylko jeden krok </h1>
         <div className={styles.form}>
           <input type="text" ref={nameInputRef} name="name" autoComplete="off" required/>
@@ -42,8 +40,8 @@ const CartForm = (props) => {
           </label>
         </div>
         <div className={styles.form}>
-          <input type="number" ref={phoneInputRef} name="phone" autoComplete="off" required/>
-          <label htmlFor="phone" className={styles.labelName}>
+          <input type="tel" ref={phoneInputRef} name="tel" autoComplete="off" required/>
+          <label htmlFor="tel" className={styles.labelName}>
             <span className={styles.contentName}>Telefon kontaktowy</span>
           </label>
         </div>

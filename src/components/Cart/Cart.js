@@ -10,7 +10,7 @@ import {useState} from "react";
 const Cart = props => {
   const cart = useSelector(state => state.cart);
   const [orderSended, setOrderSended] = useState(false);
-  const [orderSubmit, setOrderSubmit] = useState(false);
+  const [orderSubmit, setOrderSubmit] = useState(true);
   const dispatch = useDispatch();
 
   const hasItems = cart.items.length > 0;
@@ -84,7 +84,7 @@ const Cart = props => {
           onClick={props.onClose}>Anuluj zamówienie</button>
         }
 
-        <button className={styles['button--alt']} onClick={orderCancelHandler}>Zamknij</button>
+        <button className={styles['button--alt']} onClick={props.onClose}>Zamknij</button>
       </div>
 
     </Modal>

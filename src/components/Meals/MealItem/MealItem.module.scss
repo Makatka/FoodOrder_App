@@ -1,7 +1,7 @@
 .mealItem {
   background-color: #60ba63;
   color: #fff;
-  width: 70%;
+  width: 80%;
   margin: 20px auto;
   border-radius: 20px;
   padding: 20px;
@@ -9,10 +9,10 @@
   align-items: center;
   justify-content: space-between;
   animation: meals-appear 1s ease-out forwards;
-
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 
   &:hover {
-    background-color: #73c975;
+    background-color: #5aad5d;
   }
 
   .mealImage {
