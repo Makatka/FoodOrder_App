@@ -1,3 +1,4 @@
+
 .cartItems {
   list-style: none;
   margin: 0;
@@ -21,9 +22,10 @@
 
 .actions button {
   font: inherit;
+  font-weight: bold;
   cursor: pointer;
   background-color: transparent;
-  border: 1px solid #60ba63;
+  border: 1px solid var(--main-color);
   padding: 0.5rem 2rem;
   border-radius: 25px;
   margin-left: 1rem;
@@ -31,30 +33,31 @@
 
 .actions button:hover,
 .actions button:active {
-  background-color: #60ba63;
-  border-color: #60ba63;
+  background-color: var(--main-color);
+  border-color: var(--main-color);
   color: white;
 }
 
 .actions .button--alt {
-  color: #60ba63;
+  color: var(--main-color);
 }
 
 .actions .button--cancel {
-  color: #e37a71;
-  border: 1px solid #e37a71;
+  color: var(--danger-color);
+  border: 1px solid var(--danger-color);
   transition: all .2s ease;
 
   &:hover {
     color: #fff;
-    background-color: #e37a71;
-    border: 1px solid #e37a71;
+    background-color: var(--danger-color);
+    border: 1px solid var(--danger-color);
   }
 }
 
 .actions .button {
-  background-color: #60ba63;
+  background-color: var(--main-color);
   color: white;
+
 }
 
 .orderInfo {
@@ -63,7 +66,6 @@
   text-align: center;
 
   p {
-    font-family: Roboto, sans-serif;
     margin-top: 50px;
     font-size: 26px;
   }

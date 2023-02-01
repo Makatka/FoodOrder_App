@@ -1,15 +1,34 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+:root {
+  --main-bg-color: #f9f9f9;
+  --main-color:  #60BA63;
+  --hover-main-color: #55B458;
+  --second-color: #FC8F36;
+  --dark-text-color: #2E4057;
+  --danger-color: #D7263D;
+  --text-font: 'Nunito', sans-serif;
+  --logo-font: 'Dancing Script', cursive;
+}
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--text-font);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
-  background-color: #f9f9f9;
+  background-color: var(--main-bg-color);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+  text-decoration: none;
+}
+
+ul, li {
+  list-style: none;
 }

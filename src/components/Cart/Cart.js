@@ -4,13 +4,13 @@ import CartItem from "./CartItem";
 import CartForm from "./CartForm";
 import deliveryImage from '../../assets/delivery.jpg'
 import {useSelector, useDispatch} from 'react-redux';
-import {submitOrder, cancelOrder, sendOrder} from "../../redux/cartRedux";
+import {submitOrder, cancelOrder} from "../../redux/cartRedux";
 import {useState} from "react";
 
 const Cart = props => {
   const cart = useSelector(state => state.cart);
   const [orderSended, setOrderSended] = useState(false);
-  const [orderSubmit, setOrderSubmit] = useState(true);
+  const [orderSubmit, setOrderSubmit] = useState(false);
   const dispatch = useDispatch();
 
   const hasItems = cart.items.length > 0;
@@ -79,7 +79,7 @@ const Cart = props => {
         {hasItems && !orderSubmit &&
           <button className={styles['button--alt']} onClick={submitOrderHandler}>Zamów</button>}
 
-        {orderSubmit && <button
+        {orderSubmit && !orderSended && <button
           className={styles['button--cancel']}
           onClick={props.onClose}>Anuluj zamówienie</button>
         }

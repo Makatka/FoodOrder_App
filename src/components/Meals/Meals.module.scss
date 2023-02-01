@@ -1,8 +1,8 @@
 .meals {
   max-width: 60rem;
   width: 90%;
-  margin: 2rem auto;
-  animation: meals-appear 1s ease-out forwards;
+  margin: 0 auto;
+  animation: meals-wrappear 1s ease-out forwards;
 
   ul {
     list-style: none;
@@ -13,7 +13,7 @@
 }
 
 
-@keyframes meals-appear {
+@keyframes meals-wrappear {
   from {
     opacity: 0;
     transform: translateY(3rem);
@@ -23,4 +23,10 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@media (max-width: 800px) {
+ .meals {
+   max-width: 100%;
+ }
 }

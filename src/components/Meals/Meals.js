@@ -1,12 +1,25 @@
-import AvailableMeals from "./AvailableMeals";
-import {Fragment} from "react";
-import MealsFilter from "./MealsFilter";
-import TagsList from "./TagsList";
-import Container from "../Layout/Container";
+import styles from './Meals.module.scss';
+import MealItem from './MealItem/MealItem'
+import { useSelector } from 'react-redux';
 
 const Meals = () => {
+  const meals = useSelector((state) => state.meals);
+
+  const mealsList = meals.map(meal => <MealItem
+    key={meal.id}
+    id={meal.id}
+    name={meal.name}
+    price={meal.price}
+    description={meal.description}
+    image={meal.imageUrl}
+
+  />);
   return (
-       <AvailableMeals />
+    <section className={styles.meals}>
+        <ul>
+          {mealsList}
+        </ul>
+    </section>
   )
 }
 

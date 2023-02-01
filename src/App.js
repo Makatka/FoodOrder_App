@@ -4,7 +4,6 @@ import './index.css'
 import Meals from "./components/Meals/Meals";
 import Cart from "./components/Cart/Cart";
 import Container from "./components/Layout/Container";
-import MealsFilter from "./components/Meals/MealsFilter";
 import TagsList from "./components/Meals/TagsList";
 
 
@@ -24,10 +23,7 @@ function App() {
       {visibleCart && <Cart onClose={hideCartHandler}/>}
       <Header onShowCart={showCartHandler}/>
       <Container>
-        <aside>
-          <MealsFilter/>
-          <TagsList/>
-        </aside>
+        <TagsList/>
         <Meals/>
       </Container>
     </div>
