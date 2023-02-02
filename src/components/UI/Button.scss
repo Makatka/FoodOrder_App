@@ -1,0 +1,24 @@
+.button {
+  padding: 10px;
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+
+  .add {
+    background-color: var(--second-color);
+  }
+}
+
+.searchBtn {
+  transform: translateX(-50px);
+  padding: 8px;
+  background-color: transparent;
+}
+
+.fa-search {
+  width: 30px;
+  height: 30px;
+  font-size: 25px;
+  color: var(--dark-text-color);
+}

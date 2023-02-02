@@ -52,8 +52,8 @@ const initialState = {
       orderDetails: {}
     }
 
-  }
-
+  },
+  searchString: ''
 }
 
 

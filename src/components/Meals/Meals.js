@@ -1,9 +1,11 @@
 import styles from './Meals.module.scss';
 import MealItem from './MealItem/MealItem'
 import { useSelector } from 'react-redux';
+import {getFilteredMeals} from "../../redux/mealsRedux";
 
 const Meals = () => {
-  const meals = useSelector((state) => state.meals);
+  const meals = useSelector(state => getFilteredMeals(state));
+
 
   const mealsList = meals.map(meal => <MealItem
     key={meal.id}
