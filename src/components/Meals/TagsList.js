@@ -12,8 +12,6 @@ const TagsList = () => {
         <li>#na ciepło</li>
         <li>#na zimno</li>
         <li>#najczęściej zamawiane</li>
-
-
       </ul>
   )
 }

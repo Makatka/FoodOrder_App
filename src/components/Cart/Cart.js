@@ -10,7 +10,7 @@ import {useState} from "react";
 const Cart = props => {
   const cart = useSelector(state => state.cart);
   const [orderSended, setOrderSended] = useState(false);
-  const [orderSubmit, setOrderSubmit] = useState(false);
+  const [orderSubmit, setOrderSubmit] = useState(true);
   const dispatch = useDispatch();
 
   const hasItems = cart.items.length > 0;

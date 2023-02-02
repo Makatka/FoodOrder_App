@@ -4,7 +4,7 @@ import mealsImage from '../../assets/meal.jpeg';
 import userImage from '../../assets/user.jpeg';
 import React from "react"
 import HeaderCartButton from "./HeaderCartButton";
-import MealsSearch from "../Meals/MealsSearch";
+import FormSearch from "../Meals/FormSearch";
 
 
 const Header = props => {
@@ -22,7 +22,7 @@ const Header = props => {
       </header>
       <div className={styles.mainImage}>
         <img src={mealsImage} alt="Fantastic meal." />
-        <MealsSearch />
+        <FormSearch />
       </div>
     </Fragment>
   )
