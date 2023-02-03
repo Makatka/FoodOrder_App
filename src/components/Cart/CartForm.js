@@ -3,7 +3,7 @@ import styles from './CartForm.module.scss'
 import {useDispatch} from "react-redux";
 import {sendOrder} from "../../redux/cartRedux";
 import InputOrderForm from "../UI/InputOrderForm";
-
+import Button from "../UI/Button";
 const CartForm = (props) => {
 
   const dispatch = useDispatch();
@@ -52,29 +52,10 @@ const CartForm = (props) => {
         name: 'deliveryDetails',
         type: 'text',
         placeholder: 'Szczegóły dla dostawcy'
-
       }}/>
 
-      {/*
-      <div className={styles.form}>
-        <input type="text" ref={addressInputRef} name="address" autoComplete="off" required/>
-        <label htmlFor="address" className={styles.labelName}>
-          <span className={styles.contentName}>Adres dostawy</span>
-        </label>
-      </div>
-      <div className={styles.form}>
-        <input type="tel" ref={phoneInputRef} name="tel" autoComplete="off" required/>
-        <label htmlFor="tel" className={styles.labelName}>
-          <span className={styles.contentName}>Telefon kontaktowy</span>
-        </label>
-      </div>
-      <div className={styles.form}>
-        <input type="text" ref={detailsInputRef} name="info" autoComplete="off" required/>
-        <label htmlFor="info" className={styles.labelName}>
-          <span className={styles.contentName}>Informacje dla dostawcy</span>
-        </label>
-      </div> */}
-      <button className={styles.submitBtn}>Zamów</button>
+
+      <Button className={'button button--alt'}>Zamów</Button>
     </form>
 
 

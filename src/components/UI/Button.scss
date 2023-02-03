@@ -1,24 +1,94 @@
 .button {
-  padding: 10px;
+  padding: 10px 15px;
   background-color: var(--main-color);
   color: white;
   border: none;
-  border-radius: 50%;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: var(--text-font);
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: .7px;
 
   .add {
     background-color: var(--second-color);
   }
 }
 
+.button--add {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, .7);
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: var(--dark-text-color);
+}
 .searchBtn {
   transform: translateX(-50px);
   padding: 8px;
   background-color: transparent;
+  border-radius: 50%;
+
+  .fa-search {
+    width: 30px;
+    height: 30px;
+    font-size: 25px;
+    color: var(--dark-text-color);
+  }
 }
 
-.fa-search {
-  width: 30px;
-  height: 30px;
-  font-size: 25px;
-  color: var(--dark-text-color);
+.button--alt {
+  margin-left: 20px;
+
+  &:hover {
+    background-color: var(--hover-main-color);
+  }
+}
+
+.button--cancel {
+  color: var(--danger-color);
+  border: 1px solid var(--danger-color);
+  transition: all .2s ease;
+  background-color: #fff;
+
+
+  &:hover {
+    color: #fff;
+    background-color: var(--danger-color);
+    border: 1px solid var(--danger-color);
+  }
+}
+
+.button--amount {
+  font: inherit;
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+  width: 3rem;
+  text-align: center;
+  border-radius: 6px;
+  background-color: transparent;
+  cursor: pointer;
+  margin-left: 15px;
+
+  &:first-of-type {
+    color: var(--danger-color);
+    border: 1px solid var(--danger-color);
+    &:hover,
+    &:active {
+      background-color: var(--danger-color);
+      color: var(--main-bg-color);
+    }
+  }
+
+
+
+  &:hover,
+  &:active {
+    background-color: var(--main-color);
+    color: var(--main-bg-color);
+  }
 }

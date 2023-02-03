@@ -1,8 +1,9 @@
 import {useRef, useState} from "react";
 import styles from './MealItemForm.module.scss';
-import Input from "../../UI/Input";
+import InputAmount from "../../UI/InputAmount";
 import {useDispatch} from 'react-redux'
 import {addToCart, updateTotalAmount} from "../../../redux/cartRedux";
+import Button from "../../UI/Button";
 
 const MealItemForm = props => {
   const [amountIsValid, setAmountIsValid] = useState(true)
@@ -30,8 +31,8 @@ const MealItemForm = props => {
     } ))
   };
   return (
-    <form className={styles.form} onSubmit={submitHandler}>
-      <Input label="Ilość:" ref={amountInputRef} input={{
+    <form className={styles.form}>
+      <InputAmount className={'input--amount'} ref={amountInputRef} input={{
 
         id: 'amount_' + props.id,
         type: 'number',
@@ -40,7 +41,9 @@ const MealItemForm = props => {
         step: '1',
         defaultValue: '1',
       }}/>
-      <button>Dodaj</button>
+      <Button className={'button button--add'} onClick={submitHandler}>
+        <span className={'fa fa-shopping-cart'}></span>
+      </Button>
       {!amountIsValid  && <p>Proszę wprowadź poprawną ilość (1-5).</p>}
     </form>
   )
