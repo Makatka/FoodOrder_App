@@ -1,10 +1,9 @@
 import styles from './TagsList.module.scss'
-import {useSelector} from "react-redux";
-import {clsx} from "clsx";
-//import {getTagsList} from "../../redux/
+import {useDispatch, useSelector} from "react-redux";
+import {updateSearchTag} from "../../redux/searchStringRedux";
 
 const TagsList = () => {
-
+  const dispatch = useDispatch();
   const meals = useSelector(state => state.meals);
 
   let allTags = [];
@@ -20,6 +19,13 @@ const TagsList = () => {
       }
     }
   }
+
+
+  const filterByTagHandler = (e) => {
+    const searchTag = e.target.textContent.replace('#', '');
+    dispatch(updateSearchTag(searchTag))
+  }
+
 
   const calculateTagsParams = (tags) => {
     const params = {
@@ -40,17 +46,19 @@ const TagsList = () => {
     const normalizedMax = params.max - params.min;
     const percentage = normalizedCount / normalizedMax;
     const tagSizes = 5;
-    const classNumber = Math.floor( percentage * (tagSizes - 1) + 1 );
+    const classNumber = Math.floor(percentage * (tagSizes - 1) + 1);
 
     return classNumber
   };
 
-  const tagList = uniqueTags.map(tag => <li
-    key={uniqueTags.indexOf(tag)}
-    className = {styles[`tagSize${calculateTagClass(allTags[tag], tagsParams)}`]}
+  const tagList = uniqueTags.map(tag =>
+    <li
+      key={uniqueTags.indexOf(tag)}
+      className={styles[`tagSize${calculateTagClass(allTags[tag], tagsParams)}`]}
+      onClick={filterByTagHandler}
+    >#{tag}
 
-
-  >#{tag}</li>);
+    </li>);
 
   return (
     <ul className={styles.list}>

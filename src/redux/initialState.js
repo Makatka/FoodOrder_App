@@ -59,7 +59,10 @@ const initialState = {
     }
 
   },
-  searchString: ''
+  searchString: {
+    string: '',
+    tag: ''
+  }
 }
 
 
