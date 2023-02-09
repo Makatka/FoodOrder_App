@@ -1,10 +1,12 @@
 import styles from './TagsList.module.scss'
 import {useDispatch, useSelector} from "react-redux";
 import {updateSearchTag} from "../../redux/searchStringRedux";
+import {clsx} from "clsx";
 
 const TagsList = () => {
   const dispatch = useDispatch();
   const meals = useSelector(state => state.meals);
+  const activeTag = useSelector(state => state.searchString.tag);
 
   let allTags = [];
   let uniqueTags = [];
@@ -54,7 +56,7 @@ const TagsList = () => {
   const tagList = uniqueTags.map(tag =>
     <li
       key={uniqueTags.indexOf(tag)}
-      className={styles[`tagSize${calculateTagClass(allTags[tag], tagsParams)}`]}
+      className = {clsx(styles[`tagSize${calculateTagClass(allTags[tag], tagsParams)}`], (activeTag === tag) && styles.activeTag)}
       onClick={filterByTagHandler}
     >#{tag}
 

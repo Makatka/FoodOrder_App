@@ -27,7 +27,12 @@ max-width: 350px;
     &.tagSize5 {
       font-size: 22px;
     }
+    &.activeTag {
+      color: var(--main-color);
+      text-decoration: underline;
+    }
   }
+
 
 
 }
