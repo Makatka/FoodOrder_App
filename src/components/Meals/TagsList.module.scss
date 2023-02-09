@@ -8,11 +8,28 @@ max-width: 350px;
     margin-bottom: 15px;
     position: relative;
 
-
     &:hover {
       color: var(--hover-main-color);
     }
+
+    &.tagSize1 {
+      font-size: 14px;
+    }
+    &.tagSize2 {
+      font-size: 16px;
+    }
+    &.tagSize3 {
+      font-size: 18px;
+    }
+    &.tagSize4 {
+      font-size: 20px;
+    }
+    &.tagSize5 {
+      font-size: 22px;
+    }
   }
+
+
 }
 
 @media (max-width: 800px) {

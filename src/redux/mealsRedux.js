@@ -5,15 +5,11 @@ import {strContains} from "../utils/strContains";
 export const getFilteredMeals = ({meals, searchString}) =>
   meals.filter(mealItem => strContains(mealItem.name, searchString));
 
-/* export const getTagsList = (meals) => {
-  let tagsList = [];
+ export const getTagsList = (meals) => {
 
-  for (let meal of meals) {
-   tagsList = [...tagsList, ...meal.tags]
-  }
 
 }
-*/
+
 
 const mealsReducer = (statePart = initialState.meals, action) => {
   switch (action.type) {
