@@ -42,7 +42,7 @@ const MealItemForm = props => {
         defaultValue: '1',
       }}/>
       <Button className={'button button--add'} onClick={submitHandler}>
-        <span className={'fa fa-shopping-cart'}></span>
+        <span className={'fa fa-plus'}></span>
       </Button>
       {!amountIsValid  && <p>Proszę wprowadź poprawną ilość (1-5).</p>}
     </form>

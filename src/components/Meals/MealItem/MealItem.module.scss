@@ -1,6 +1,6 @@
 .mealItem {
-  background-color: var(--main-color);
-  color: #fff;
+  background-color: #fff;
+  color: var(--dark-text-color);
   width: 95%;
   margin: 20px auto;
   border-radius: 20px;
@@ -9,10 +9,11 @@
   align-items: center;
   justify-content: space-between;
   animation: meals-appear 1s ease-out forwards;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
   &:hover {
-    background-color: var(--hover-main-color);
+    background-color: rgba(85, 180, 88, 0.5);
+
   }
 
   .mealImage {

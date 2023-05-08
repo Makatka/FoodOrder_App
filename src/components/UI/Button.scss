@@ -16,14 +16,15 @@
 }
 
 .button--add {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   background-color: rgba(255, 255, 255, .7);
   display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
   color: var(--dark-text-color);
+  font-size: 25px;
 }
 .searchBtn {
   transform: translateX(-50px);
