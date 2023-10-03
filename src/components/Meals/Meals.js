@@ -14,6 +14,8 @@ const Meals = () => {
     price={meal.price}
     description={meal.description}
     image={meal.imageUrl}
+    tags={meal.tags}
+
 
   />);
   return (

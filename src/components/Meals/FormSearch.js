@@ -17,8 +17,8 @@ const FormSearch = () => {
   }
 
 return <form className={styles.searchWrapper} onSubmit={submitHandler}>
-  <TextInput placeholder={"Wyszukaj..."} value={searchMeal} onChange={e => setSearchMeal(e.target.value)}/>
-  <Button className={'button searchBtn'}>
+  <TextInput  className={styles.searchInput} placeholder={"Wyszukaj..."} value={searchMeal} onChange={e => setSearchMeal(e.target.value)}/>
+  <Button >
     <span className={'fa fa-search'}></span>
   </Button>
 </form>

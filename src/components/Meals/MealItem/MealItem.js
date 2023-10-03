@@ -3,6 +3,7 @@ import MealItemForm from "./MealItemForm";
 
 
 const MealItem = props => {
+  const tagList =  props.tags.map(tag => <small>#{tag}</small>)
 
 
   return (
@@ -14,6 +15,11 @@ const MealItem = props => {
         <span className={styles.price}>{props.price} zł</span>
       </div>
       <MealItemForm id={props.id} name={props.name} price={props.price} />
+      <div className={styles.tags}>
+        {tagList}
+
+      </div>
+
     </li>
   )
 }

@@ -5,6 +5,7 @@ import userImage from '../../assets/user.jpeg';
 import React from "react"
 import HeaderCartButton from "./HeaderCartButton";
 import FormSearch from "../Meals/FormSearch";
+import Container from "./Container";
 
 
 const Header = props => {
@@ -22,7 +23,9 @@ const Header = props => {
       </header>
       <div className={styles.mainImage}>
         <img src={mealsImage} alt="Fantastic meal." />
-        <FormSearch />
+        <Container>
+          <FormSearch />
+        </Container>
       </div>
     </Fragment>
   )
